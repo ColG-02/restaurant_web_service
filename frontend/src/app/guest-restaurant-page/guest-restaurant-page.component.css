@@ -1,0 +1,13 @@
+.bc-img{
+    background-color: rosybrown;
+    background-image: url('/frontend/src/assets/meal1.png');
+    background-size: cover;
+    height: 400px;
+    width: 400px;
+  }
+
+  .carousel-item img {
+    width: 100%; /* Ensure images fill the width of their parent carousel item */
+    height: 100%; /* Ensure images fill the height of their parent carousel item */
+    object-fit: cover; /* Crop images to cover their container */
+}

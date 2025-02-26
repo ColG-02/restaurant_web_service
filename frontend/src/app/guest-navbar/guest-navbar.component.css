@@ -1,0 +1,20 @@
+section{
+    padding: 60px 0;
+}
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -1px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 1px;
+    color: PaleGoldenRod;
+    outline: none;
+    text-align: center;
+  }
+.title:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+  }

@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "66809e02cd2f7fd27dff356d"
+  },
+  "text": "Komentar 1",
+  "rating": 2,
+  "author": "ColG"
+},
+{
+  "_id": {
+    "$oid": "66809e41cd2f7fd27dff356f"
+  },
+  "text": "Komentar 2",
+  "rating": 2,
+  "author": "ColG"
+},
+{
+  "_id": {
+    "$oid": "66809e51cd2f7fd27dff3571"
+  },
+  "text": "Komentar 3",
+  "rating": 3,
+  "author": "ColG"
+},
+{
+  "_id": {
+    "$oid": "66809e68cd2f7fd27dff3573"
+  },
+  "text": "Komentar 4",
+  "rating": 4,
+  "author": "ColG"
+},
+{
+  "_id": {
+    "$oid": "66809e78cd2f7fd27dff3575"
+  },
+  "text": "Komentar 5",
+  "rating": 5,
+  "author": "ColG"
+}]

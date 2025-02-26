@@ -1,0 +1,117 @@
+<app-guest-navbar></app-guest-navbar>
+
+<!-- active reservations -->
+<section class="bg-image">
+    <div class="container-lg">
+        <div class="text-center text-white">
+            <h2>Vase aktuelne rezervacije</h2>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-8">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Datum rezervacije</th>
+                        <th scope="col">Restoran</th>
+                        <th scope="col">Adresa restorana</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let r of myReservations">
+                        <td>{{r.dateAndTime}}</td>
+                        <td>{{r.restaurant}}</td>
+                        <td>{{getAddress(r.restaurant)}}</td>
+                        <td *ngIf="checkReservationDate() < r.dateAndTime">
+                            <button class="btn btn-dark btn-outline-light"
+                            (click)="cancelReservation(r)">Otkazi rezervaciju</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+ </section>
+
+ <!-- reservation archive -->
+  <section class="bg-light">
+    <div class="container-lg">
+        <div class="text-start text-dark">
+            <h2>Arhiva rezervacija</h2>
+        </div>
+        <div class="row justify-content-start my-5">
+            <div class="col-lg-8">
+                <table class="table table-bordered border-dark table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Datum rezervacije</th>
+                        <th scope="col">Restoran</th>
+                        <th scope="col-2">Komentar i ocena</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let r of reservationArchive">
+                        <td>{{r.dateAndTime}}</td>
+                        <td>{{r.restaurant}}</td>
+                        <td>
+                            <span *ngIf="r.review.rating != 0">
+                                {{r.review.text}}
+                            <br>
+                            <small class="text-muted">
+                                <span class="pb-2" *ngFor="let s of getStars(r.review.rating)">
+                                    <i class="bi bi-star"></i>
+                                </span> ~ {{r.review.author}}
+                            </small>
+                            </span>
+                            <span *ngIf="r.review.rating == 0 && r.message =='' ">
+                                <button class="btn btn-dark btn-outline-light"
+                                data-bs-toggle="modal" data-bs-target="#reg-modal" (click)="setCurrReservation(r)">
+                                    Dodaj komentar
+                                </button>
+                            </span>
+                            <span *ngIf="r.review.rating == 0 && r.message!='' ">
+                                {{r.message}}
+                            </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  
+  <!-- modal-itself -->
+  <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Dodajte komentar na uslugu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label class="form-label">Unesite vas komentar:</label>
+                <input type="text" class="form-control" [(ngModel)]="newComment">
+                <div>
+                    <label class="form-label mt-3">Unesite ocenu:</label>
+                    <div class=" d-flex justify-content-center mt-1">
+                        <div class=" text-center mb-5">
+                                <div class="rating"> 
+                                    <input type="radio" name="rating" value=5 id="5" [(ngModel)]="newRating"><label for="5">☆</label> 
+                                    <input type="radio" name="rating" value=4 id="4" [(ngModel)]="newRating"><label for="4">☆</label> 
+                                    <input type="radio" name="rating" value=3 id="3" [(ngModel)]="newRating"><label for="3">☆</label> 
+                                    <input type="radio" name="rating" value=2 id="2" [(ngModel)]="newRating"><label for="2">☆</label> 
+                                    <input type="radio" name="rating" value=1 id="1" [(ngModel)]="newRating"><label for="1">☆</label> 
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" (click)="addComment()">Potvrdi</button>
+            </div>
+        </div>
+    </div>
+ </div>

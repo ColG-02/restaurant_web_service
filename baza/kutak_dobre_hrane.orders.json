@@ -1,0 +1,251 @@
+[{
+  "_id": {
+    "$oid": "6684947a3d9f33758c248bae"
+  },
+  "restaurant": "Bela Reka",
+  "name": "ColG",
+  "status": "requested",
+  "expectedDeliveryTime": "0:45",
+  "dateAndTime": "2024-07-03/01:59",
+  "bill": 4300,
+  "meals": [
+    {
+      "_id": "6683101f8d1809f402c655ac",
+      "name": "Cevapi",
+      "image": "assets/cevapi.jpg",
+      "price": 800,
+      "ingredients": [
+        "govedje meso",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683101f8d1809f402c655ac",
+      "name": "Cevapi",
+      "image": "assets/cevapi.jpg",
+      "price": 800,
+      "ingredients": [
+        "govedje meso",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683101f8d1809f402c655ac",
+      "name": "Cevapi",
+      "image": "assets/cevapi.jpg",
+      "price": 800,
+      "ingredients": [
+        "govedje meso",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683104b8d1809f402c655ae",
+      "name": "Punjena pljeskavica",
+      "image": "assets/punjena_pljeskavica.png",
+      "price": 950,
+      "ingredients": [
+        "govedje meso",
+        "kajmak",
+        "kulen",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683104b8d1809f402c655ae",
+      "name": "Punjena pljeskavica",
+      "image": "assets/punjena_pljeskavica.png",
+      "price": 950,
+      "ingredients": [
+        "govedje meso",
+        "kajmak",
+        "kulen",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668499e33d9f33758c248bc4"
+  },
+  "restaurant": "Super VOK",
+  "name": "ColG",
+  "status": "accepted",
+  "expectedDeliveryTime": "0:45",
+  "dateAndTime": "2024-07-03/02:22",
+  "bill": 1700,
+  "meals": [
+    {
+      "_id": "668310918d1809f402c655b0",
+      "name": "Piletina u secuan sosu",
+      "image": "assets/piletina_u_secuan_sosu.jpg",
+      "price": 450,
+      "ingredients": [
+        "pilece meso",
+        "rukola",
+        "sargarepa",
+        "secuan sos"
+      ],
+      "restaurant": "Super VOK"
+    },
+    {
+      "_id": "668310918d1809f402c655b0",
+      "name": "Piletina u secuan sosu",
+      "image": "assets/piletina_u_secuan_sosu.jpg",
+      "price": 450,
+      "ingredients": [
+        "pilece meso",
+        "rukola",
+        "sargarepa",
+        "secuan sos"
+      ],
+      "restaurant": "Super VOK"
+    },
+    {
+      "_id": "668310e78d1809f402c655b2",
+      "name": "Terijaki piletina",
+      "image": "assets/terijaki_piletina.jpg",
+      "price": 400,
+      "ingredients": [
+        "pilece meso",
+        "terijaki sos",
+        "sampinjoni"
+      ],
+      "restaurant": "Super VOK"
+    },
+    {
+      "_id": "668310e78d1809f402c655b2",
+      "name": "Terijaki piletina",
+      "image": "assets/terijaki_piletina.jpg",
+      "price": 400,
+      "ingredients": [
+        "pilece meso",
+        "terijaki sos",
+        "sampinjoni"
+      ],
+      "restaurant": "Super VOK"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66849a8f3d9f33758c248bcc"
+  },
+  "restaurant": "Bela Reka",
+  "name": "ColG",
+  "status": "delivered",
+  "expectedDeliveryTime": "0:45",
+  "dateAndTime": "2024-07-03/02:25",
+  "bill": 2550,
+  "meals": [
+    {
+      "_id": "6683101f8d1809f402c655ac",
+      "name": "Cevapi",
+      "image": "assets/cevapi.jpg",
+      "price": 800,
+      "ingredients": [
+        "govedje meso",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683101f8d1809f402c655ac",
+      "name": "Cevapi",
+      "image": "assets/cevapi.jpg",
+      "price": 800,
+      "ingredients": [
+        "govedje meso",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    },
+    {
+      "_id": "6683104b8d1809f402c655ae",
+      "name": "Punjena pljeskavica",
+      "image": "assets/punjena_pljeskavica.png",
+      "price": 950,
+      "ingredients": [
+        "govedje meso",
+        "kajmak",
+        "kulen",
+        "luk"
+      ],
+      "restaurant": "Bela Reka"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6687faaeaaf40c1599f40ef2"
+  },
+  "restaurant": "Super VOK",
+  "name": "ColG",
+  "status": "requested",
+  "expectedDeliveryTime": "30-40 minuta",
+  "dateAndTime": "2024-07-05/15:52",
+  "bill": 450,
+  "meals": [
+    {
+      "_id": "668310918d1809f402c655b0",
+      "name": "Piletina u secuan sosu",
+      "image": "assets/piletina_u_secuan_sosu.jpg",
+      "price": 450,
+      "ingredients": [
+        "pilece meso",
+        "rukola",
+        "sargarepa",
+        "secuan sos"
+      ],
+      "restaurant": "Super VOK"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6687fac1aaf40c1599f40ef4"
+  },
+  "restaurant": "Super VOK",
+  "name": "ColG",
+  "status": "requested",
+  "expectedDeliveryTime": "0:45",
+  "dateAndTime": "2024-07-05/15:53",
+  "bill": 800,
+  "meals": [
+    {
+      "_id": "668310e78d1809f402c655b2",
+      "name": "Terijaki piletina",
+      "image": "assets/terijaki_piletina.jpg",
+      "price": 400,
+      "ingredients": [
+        "pilece meso",
+        "terijaki sos",
+        "sampinjoni"
+      ],
+      "restaurant": "Super VOK"
+    },
+    {
+      "_id": "668310e78d1809f402c655b2",
+      "name": "Terijaki piletina",
+      "image": "assets/terijaki_piletina.jpg",
+      "price": 400,
+      "ingredients": [
+        "pilece meso",
+        "terijaki sos",
+        "sampinjoni"
+      ],
+      "restaurant": "Super VOK"
+    }
+  ],
+  "__v": 0
+}]

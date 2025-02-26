@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutak dobre hrane</title>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-white">
+                    <i class="bi bi-egg-fried" style="color: palegoldenrod;"></i>
+                    <span class="title"> Kutak dobre hrane </span>
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar-links -->
+         <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="nav-link">
+                      <button type="button" class="btn btn-outline-light" href="javascript:void(0)" (click)="toLogin()">Prijavi se</button>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                      <button type="button" class="btn btn-outline-light" href="javascript:void(0)" (click)="toRegister()">Registruj se</button>
+                    </div>
+                </li>
+            </ul>
+         </div>
+        </div>
+     </nav>
+
+    <!-- hero section -->
+    <section id="intro" class="bg-image">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-7 text-center text-md-start">
+                    <h1 class="text-clr mb-4">
+                        <div class="display-2">Dobrodosli</div>
+                    </h1>
+                    <small class="lead my-4 text-clr">preko {{usersCounter}} zadovoljnih korisnika</small>
+                    <p class="lead my-4 text-clr">svakodnevno posecuje preko {{locations}} restorana</p>
+                    <!-- <a href="#link" class="btn btn-secondary btn-lg">Book here</a> -->
+                    <!-- open-sidebar -->
+                     
+                </div>
+                <div class="col-md-5"></div>
+                <!-- <div class="col-md-5 text-center d-none d-md-block">
+                    
+                     <span class="tt" data-bs-placement="bottom" title="Photo of My Restaurant">
+                        <img class="img-fluid" src="assets/restaurant-table-interior-main.jpg">
+                     </span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- statistics-section -->
+    <section id="pricing" class="mt-5" style="background-color: palegoldenrod;">
+        <div class="conntainer-lg">
+            <div class="text-center">
+                <h2 class="fst-italic">Broj posetilaca restorana...</h2>
+            </div>
+
+            <div class="row my-5 align-items-center justify-content-center g-3">
+
+                <div class="col-8 col-lg-4 col-xl-3 text-center fst-italic">
+                    <h6 class="text">u prethodnih 24 sata:</h6>
+                    <p>{{pastDay}}</p>
+                </div>
+
+                <div class="col-8 col-lg-4 col-xl-3 text-center fst-italic">
+                    <h6>u prethodnih 7 dana:</h6>
+                    <p>{{past7Days}}</p>
+                </div>
+
+                <div class="col-8 col-lg-4 col-xl-3 text-center fst-italic">
+                    <h6>u prethodnih mesec dana:</h6>
+                    <p>{{pastMonth}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- list-of-restaurants -->
+    <section id="topics">
+        <div class="container-md">
+            <div class="row justify-content-around align-items-center">
+                <div class="col-6 col-lg-5">
+                    <div class="text-center">
+                        <h4 class="mb-4">Lista postojecih restorana:</h4>
+                        <!-- search -->
+                        <div>
+                            <div class="d-flex">
+                                <div class="p-2">
+                                    <label for="name" class="form-label fs-5">Pretraga:</label>
+                                </div>
+                                <div class="p-2 ms-auto">
+                                    <button class="btn btn-outline-dark border-0" (click)="search()">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-2 input-group">
+                                <input type="text" class="form-control" id="name" 
+                                placeholder="Unesite naziv" [(ngModel)]="searchName">
+                            </div>
+                            <div class="mb-2 input-group">
+                                <input type="text" class="form-control" id="name" 
+                                placeholder="Unesite adresu" [(ngModel)]="searchAddress">
+                            </div>
+                            <div class="mb-2 input-group">
+                                <input type="text" class="form-control" id="name" 
+                                placeholder="Unesite tip" [(ngModel)]="searchType">
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- sort -->
+                         <div class="mt-4 d-flex">
+                            <div class="p-2">
+                                <label for="name" class="form-label fs-5 me-5">Sortiranje:</label>
+                                
+                                    <input type="radio" name="inlineRadioOptions" 
+                                    value="name" [(ngModel)] = "sortParam" >
+                                    <label class="me-2">Naziv</label>
+                                  
+                                    <input type="radio" name="inlineRadioOptions" 
+                                    value="address" [(ngModel)] = "sortParam">
+                                    <label class="me-2">Adresa</label>
+
+                                    <input type="radio" name="inlineRadioOptions" 
+                                    value="type" [(ngModel)] = "sortParam">
+                                    <label class="me-2">Tip</label>
+                                  
+                            </div>
+                            <div class="p-2 ms-auto">
+                                <button class="btn btn-outline-dark border-0" (click)="sort('down')">
+                                    <i class="bi bi-caret-down"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0"  (click)="sort('up')">
+                                    <i class="bi bi-caret-up"></i>
+                                </button>
+                            </div>
+                         </div>
+                        
+                    </div>
+                    <!-- content-table -->
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Adresa</th>
+                            <th scope="col">Tip</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr [attr.data-bs-toggle]="'collapse'" [attr.data-bs-target]="'#' + sanitizeName(r.name) + 'collapse'"
+                          role="button" aria-expanded="false" aria-controls="collapseExample"
+                          *ngFor="let r of displayedRestaurants">
+                            <td>{{r.name}}</td>
+                            <td>{{r.address}}</td>
+                            <td>{{r.type}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- collapse -->
+                <div class="col-lg-6 bc-img">
+                    <div>
+                        <!-- <img src="assets/meal1.png" alt="meal1" class="img-fluid"> -->
+                    </div>
+                        <!-- collapse -->
+                    <div id="collapseContainer">
+                        <div class="collapse mt-5" id="{{sanitizeName(r.name)}}collapse" *ngFor="let r of allRestaurants"
+                        [attr.data-bs-parent]="'#collapseContainer'">
+                            <div class="card card-body">
+                                <h5 class="card-title justify-content-center">Lista konobara restorana {{r.name}}</h5>
+                                <span class="card-subtitle mb-2 text-muted" *ngFor="let w of r.waiters">
+                                    {{w.firstname}} {{w.lastname}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    
+</body>
+</html>

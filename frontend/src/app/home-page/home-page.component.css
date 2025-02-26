@@ -1,0 +1,50 @@
+section{
+    padding: 60px 0;
+}
+
+.bg-image {
+  background-image: url("/assets/restaurant-table-interior-main.jpg");
+  background-size: 100%; 
+  background-position: bottom; 
+  background-repeat: no-repeat;
+  height: cover;
+}
+
+.text-clr {
+  font-family: Arial, sans-serif; /* Choose a readable font */
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold; /* Use bold for emphasis */
+  color: white; /* Text color that contrasts well with colorful backgrounds */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.825); /* Optional: Add a subtle text shadow for better visibility */
+  padding: 10px; /* Add padding for readability */
+  outline: 1px;
+  outline-color: palegoldenrod;
+}
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -1px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 1px;
+    color: PaleGoldenRod;
+    outline: none;
+    text-align: center;
+  }
+.title:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+  }
+
+.bc-img{
+    background-image: url('/assets/restoran2.jpg');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

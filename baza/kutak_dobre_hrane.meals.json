@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "6683101f8d1809f402c655ac"
+  },
+  "name": "Cevapi",
+  "image": "assets/cevapi.jpg",
+  "price": 800,
+  "ingredients": [
+    "govedje meso",
+    "luk"
+  ],
+  "restaurant": "Bela Reka"
+},
+{
+  "_id": {
+    "$oid": "6683104b8d1809f402c655ae"
+  },
+  "name": "Punjena pljeskavica",
+  "image": "assets/punjena_pljeskavica.png",
+  "price": 950,
+  "ingredients": [
+    "govedje meso",
+    "kajmak",
+    "kulen",
+    "luk"
+  ],
+  "restaurant": "Bela Reka"
+},
+{
+  "_id": {
+    "$oid": "668310918d1809f402c655b0"
+  },
+  "name": "Piletina u secuan sosu",
+  "image": "assets/piletina_u_secuan_sosu.jpg",
+  "price": 450,
+  "ingredients": [
+    "pilece meso",
+    "rukola",
+    "sargarepa",
+    "secuan sos"
+  ],
+  "restaurant": "Super VOK"
+},
+{
+  "_id": {
+    "$oid": "668310e78d1809f402c655b2"
+  },
+  "name": "Terijaki piletina",
+  "image": "assets/terijaki_piletina.jpg",
+  "price": 400,
+  "ingredients": [
+    "pilece meso",
+    "terijaki sos",
+    "sampinjoni"
+  ],
+  "restaurant": "Super VOK"
+},
+{
+  "_id": {
+    "$oid": "668311338d1809f402c655b4"
+  },
+  "name": "Pasta karbonara",
+  "image": "assets/pasta_karbonara.jpg",
+  "price": 700,
+  "ingredients": [
+    "testenina",
+    "slanina",
+    "karbonara sos"
+  ],
+  "restaurant": "Masa"
+},
+{
+  "_id": {
+    "$oid": "668311688d1809f402c655b6"
+  },
+  "name": "Sufle",
+  "image": "assets/sufle.jpg",
+  "price": 370,
+  "ingredients": [
+    "cokolada",
+    "sladoled vanila"
+  ],
+  "restaurant": "Masa"
+}]

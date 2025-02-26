@@ -1,0 +1,86 @@
+<app-waiter-navbar></app-waiter-navbar>
+
+<!-- order list -->
+<section id="reviews" class="bg-light">
+    <div class="container-lg">
+        <div class="text-center">
+            <h1>Trenutne porudzbine</h1>
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-8">
+                <div class="">
+                    <div class="card py-2 mb-2" *ngFor="let o of orderList">
+                        <div class="row justify-content-between card-title ms-1 me-1">
+                            <div class="col-auto">
+                                <h5 class="mb-2 fs-4">{{o.dateAndTime}}
+                                    <span class="text-muted fs-5 ms-2">{{o.name}}</span>
+                                </h5>
+                            </div>
+                            <div class="col-auto text-end">
+                                Order status: <span class="fw-bold"> {{o.status}}</span>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="card-body ms-1 me-1">
+                            <div>
+                                <ul>
+                                    <li class="mb-1" *ngFor="let m of o.meals">
+                                        <span class="fs-5 me-2">{{m.name}}</span>
+                                        <small class="text-muted">( {{m.ingredients}} )</small>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="row justify-content-between">
+                                <div class="col-auto mt-2">
+                                    <span>Procenjeno vreme dostave: {{o.expectedDeliveryTime}}</span>
+                                </div>
+                                <div class="col-auto text-end mb-1">
+                                    <span *ngIf="o.status == 'requested' ">
+                                        <button class="btn btn-dark btn-outline-light me-2" 
+                                        data-bs-toggle="modal" data-bs-target="#acc-modal" (click)="toAccept(o)">
+                                            Prihvati porudzbinu
+                                        </button>
+                                        <button class="btn btn-dark btn-outline-light" (click)="denyOrder(o)">
+                                            Odbij porudzbinu
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+ <!-- modal-accept -->
+<div class="modal fade" id="acc-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Unesite procenjeno vreme dostave</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class=" d-flex justify-content-center mt-1">
+                        <div class=" text-center mb-1 align-items-center fs-5">
+                            <select #selectInput>
+                                <option value="20-30 minuta">20-30 minuta</option>
+                                <option value="30-40 minuta">30-40 minuta</option>
+                                <option value="50-60 minuta">50-60 minuta</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" (click)="acceptOrder(selectInput.value)" >Potvrdi</button>
+            </div>
+        </div>
+    </div>
+ </div>

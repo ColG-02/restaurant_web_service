@@ -1,0 +1,95 @@
+[{
+  "_id": {
+    "$oid": "6680a06bcd2f7fd27dff3585"
+  },
+  "persons": 4,
+  "extras": "",
+  "name": "ColG",
+  "restaurant": "Bela Reka",
+  "served": true,
+  "review": {
+    "text": "Komentar 4",
+    "rating": 4,
+    "author": "ColG"
+  },
+  "dateAndTime": "",
+  "status": "accepted",
+  "message": "",
+  "table": {}
+},
+{
+  "_id": {
+    "$oid": "6680a0c4cd2f7fd27dff3589"
+  },
+  "persons": 3,
+  "extras": "",
+  "name": "ColG",
+  "restaurant": "Bela Reka",
+  "served": true,
+  "review": {
+    "text": "Komentar 3",
+    "rating": 3,
+    "author": "ColG"
+  },
+  "dateAndTime": "",
+  "status": "accepted",
+  "message": "",
+  "table": {}
+},
+{
+  "_id": {
+    "$oid": "6680a0eccd2f7fd27dff358d"
+  },
+  "persons": 5,
+  "extras": "",
+  "name": "ColG",
+  "restaurant": "Super VOK",
+  "served": true,
+  "review": {
+    "text": "Komentar 5",
+    "rating": 5,
+    "author": "ColG"
+  },
+  "dateAndTime": "",
+  "status": "accepted",
+  "message": "",
+  "table": {}
+},
+{
+  "_id": {
+    "$oid": "6680a128cd2f7fd27dff358f"
+  },
+  "persons": 1,
+  "extras": "",
+  "name": "ColG",
+  "restaurant": "Super VOK",
+  "served": true,
+  "review": {
+    "text": "Komentar 1",
+    "rating": 1,
+    "author": "ColG"
+  },
+  "dateAndTime": "",
+  "status": "accepted",
+  "message": "",
+  "table": {}
+},
+{
+  "_id": {
+    "$oid": "6680a152cd2f7fd27dff3591"
+  },
+  "persons": 2,
+  "extras": "",
+  "name": "ColG",
+  "restaurant": "Masa",
+  "served": true,
+  "review": {
+    "text": "Komentar 2",
+    "rating": 2,
+    "author": "ColG"
+  },
+  "dateAndTime": "",
+  "status": "accepted",
+  "message": "",
+  "table": {}
+}]

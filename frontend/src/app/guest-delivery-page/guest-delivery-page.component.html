@@ -1,0 +1,56 @@
+<app-guest-navbar></app-guest-navbar>
+
+
+<!-- current-deliveries -->
+
+<section class="bg-light">
+    <div class="container-lg">
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-6">
+                <div class="text-center text-dark">
+                    <h2>Aktuelne dostave</h2>
+                </div>
+                <table class="table table-bordered border-dark table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Naziv restorana</th>
+                        <th scope="col">Status narudzbine</th>
+                        <th scope="col">Procenjeno vreme dostave</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let o of myOrders">
+                        <td>{{o.restaurant}}</td>
+                        <td>{{o.status}}</td>
+                        <td>{{o.expectedDeliveryTime}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center text-dark">
+                    <h2>Arhiva dostava
+                    </h2>
+                </div>
+                <table class="table table-bordered border-dark table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Datum dostave</th>
+                        <th scope="col">Iznos racuna</th>
+                        <th scope="col">Restoran</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let o of orderArchive">
+                        <td>{{o.dateAndTime}}</td>
+                        <td>{{o.bill}} RSD</td>
+                        <td>{{o.restaurant}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+  </section>
+
+

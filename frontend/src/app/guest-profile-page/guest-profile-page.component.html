@@ -1,0 +1,151 @@
+<app-guest-navbar></app-guest-navbar>
+
+<!-- profile-section -->
+<section id="topics">
+    <div class="container-md">
+        <div class="row my-5 g-5 justify-content-around align-items-center">
+
+            <div class="col-6 col-lg-4">
+                <img [src]="img.src" alt="userPicture" class="img-fluid">
+                <div class="mt-3">
+                    <span class="fs-5">
+                        <a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                            Izmenite profil  <i class="bi bi-pencil"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card" style="width: 30rem; background-color: palegoldenrod;">
+                    <div class="card-body">
+                      <h3 class="card-title">{{loggedUser.firstname}} {{loggedUser.lastname}}</h3>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <span>
+                                    <i class="bi bi-house"></i>
+                                </span>
+                                {{loggedUser.address}}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+                                {{loggedUser.email}}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>
+                                    <i class="bi bi-telephone"></i>
+                                </span>
+                                {{loggedUser.phone}}
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <span>
+                                    <i class="bi bi-credit-card"></i>
+                                </span>
+                                {{loggedUser.card}}
+                            </div>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- modal-itself -->
+<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Izmenite profil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newUsername" class="form-control form-control-lg"
+                    placeholder="Novo korisniko ime"  [(ngModel)] = "newUser.username" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="password" id="newPassword" class="form-control form-control-lg" 
+                    placeholder="Nova lozinka" [(ngModel)] = "newUser.password" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newQuestion" class="form-control form-control-lg" 
+                    placeholder="Novo bezbednosno pitanje" [(ngModel)] = "newUser.question" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newAnswer" class="form-control form-control-lg" 
+                    placeholder="Novi odgovor" [(ngModel)] = "newUser.answer" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newFirstname" class="form-control form-control-lg" 
+                    placeholder="Novo ime" [(ngModel)] = "newUser.firstname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newLastname" class="form-control form-control-lg" 
+                    placeholder="Novo prezime" [(ngModel)] = "newUser.lastname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <label class="form-label text-black ps-2 me-3" for="newGender">Pol: </label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="muski" [(ngModel)] = "newUser.gender" >
+                      <label class="form-check-label" for="inlineRadio1">Muski</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="zenski" [(ngModel)] = "newUser.gender">
+                      <label class="form-check-label" for="inlineRadio2">Zenski</label>
+                    </div>
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newAddress" class="form-control form-control-lg"
+                    placeholder="Nova adresa" [(ngModel)] = "newUser.address" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newPhone" class="form-control form-control-lg"
+                    placeholder="Nov kontakt telefon" [(ngModel)] = "newUser.phone" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newEmail" class="form-control form-control-lg"
+                    placeholder="Nova email adresa" [(ngModel)] = "newUser.email" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newCard" class="form-control form-control-lg"
+                    placeholder="Nov broj kartice" [(ngModel)] = "newUser.card" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <div class="mb-3">
+                      <input class="form-control" type="file" id="formFile" (change)="uploadPicture($event)">
+                      <label for="formFile" class=" text-white-50">Default file input example</label>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" data-bs-dismiss="modal"
+                (click)="editProfile()">Potvrdite</button>
+            </div>
+        </div>
+    </div>
+ </div>

@@ -1,0 +1,98 @@
+<section class="gradient-custom">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-4 text-center">
+  
+            <div class="mb-md-4 mt-md-4 pb-4">
+
+              <h2 class="fw-bold mb-4">Registruj se</h2>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newUsername" class="form-control form-control-lg"  [(ngModel)] = "newUser.username" />
+                <label class="form-label text-white-50" for="newUsername">Korisnicko ime</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="password" id="newPassword" class="form-control form-control-lg" [(ngModel)] = "newUser.password" />
+                <label class="form-label text-white-50" for="newPassword">Lozinka</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newQuestion" class="form-control form-control-lg" [(ngModel)] = "newUser.question" />
+                <label class="form-label text-white-50" for="newQuestion">Bezbednosno pitanje</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newAnswer" class="form-control form-control-lg" [(ngModel)] = "newUser.answer" />
+                <label class="form-label text-white-50" for="newAnswer">Odgovor</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newFirstname" class="form-control form-control-lg" [(ngModel)] = "newUser.firstname" />
+                <label class="form-label text-white-50" for="newFirstname">Ime</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newLastname" class="form-control form-control-lg" [(ngModel)] = "newUser.lastname" />
+                <label class="form-label text-white-50" for="newLastname">Prezime</label>
+              </div>
+
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="muski" [(ngModel)] = "newUser.gender" >
+                  <label class="form-check-label" for="inlineRadio1">Muski</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="zenski" [(ngModel)] = "newUser.gender">
+                  <label class="form-check-label" for="inlineRadio2">Zenski</label>
+                </div>
+                <br>
+                <label class="form-label text-white-50" for="newGender">Pol</label>
+              </div>
+
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newAddress" class="form-control form-control-lg" [(ngModel)] = "newUser.address" />
+                <label class="form-label text-white-50" for="newAddress">Adresa</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newPhone" class="form-control form-control-lg" [(ngModel)] = "newUser.phone" />
+                <label class="form-label text-white-50" for="newPhone">Kontakt telefon</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newEmail" class="form-control form-control-lg" [(ngModel)] = "newUser.email" />
+                <label class="form-label text-white-50" for="newEmail">E-mail adresa</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <input type="text" id="newCard" class="form-control form-control-lg" [(ngModel)] = "newUser.card" />
+                <label class="form-label text-white-50" for="newCard">Broj kreditne kartice</label>
+              </div>
+
+              <div data-mdb-input-init class="form-outline form-white mb-4">
+                <div class="mb-3">
+                  <input class="form-control" type="file" id="formFile" (change)="uploadPicture($event)">
+                  <label for="formFile" class="form-label text-white-50">Default file input example</label>
+                </div>
+              </div>
+
+              <button data-mdb-button-init data-mdb-ripple-init 
+              class="btn btn-outline-light btn-lg px-5 mt-2" type="submit" (click)="register()">
+                  Napravi nalog
+              </button>
+            </div>
+            
+
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,131 @@
+<app-guest-navbar></app-guest-navbar>
+
+<!-- list-of-restaurants -->
+<section id="topics">
+    <div class="container-md pt-5">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-6 col-lg-5">
+                <div class="text-center">
+                    <h4 class="mb-4">Lista postojecih restorana:</h4>
+                    <!-- search -->
+                    <div>
+                        <div class="d-flex">
+                            <div class="p-2">
+                                <label for="name" class="form-label fs-5">Pretraga:</label>
+                            </div>
+                            <div class="p-2 ms-auto">
+                                <button class="btn btn-outline-dark border-0" (click)="search()">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-2 input-group">
+                            <input type="text" class="form-control" id="name" 
+                            placeholder="Unesite naziv" [(ngModel)]="searchName">
+                        </div>
+                        <div class="mb-2 input-group">
+                            <input type="text" class="form-control" id="name" 
+                            placeholder="Unesite adresu" [(ngModel)]="searchAddress">
+                        </div>
+                        <div class="mb-2 input-group">
+                            <input type="text" class="form-control" id="name" 
+                            placeholder="Unesite tip" [(ngModel)]="searchType">
+                        </div>
+                        
+                    </div>
+                        <!-- sort -->
+                <div class="mt-4 d-flex">
+                    <div class="p-2">
+                        <label for="name" class="form-label fs-5 me-5">Sortiranje:</label>
+                        
+                            <input type="radio" name="inlineRadioOptions" 
+                            value="name" [(ngModel)] = "sortParam" >
+                            <label class="me-2">Naziv</label>
+                          
+                            <input type="radio" name="inlineRadioOptions" 
+                            value="address" [(ngModel)] = "sortParam">
+                            <label class="me-2">Adresa</label>
+
+                            <input type="radio" name="inlineRadioOptions" 
+                            value="type" [(ngModel)] = "sortParam">
+                            <label class="me-2">Tip</label>
+                          
+                    </div>
+                    <div class="p-2 ms-auto">
+                        <button class="btn btn-outline-dark border-0" (click)="sort('down')">
+                            <i class="bi bi-caret-down"></i>
+                        </button>
+                        <button class="btn btn-outline-dark border-0"  (click)="sort('up')">
+                            <i class="bi bi-caret-up"></i>
+                        </button>
+                    </div>
+                 </div>
+                </div>
+            </div>
+
+            <!-- carousel -->
+            <div class="col-lg-7">
+                <div>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="assets/restaurant-table-interior-main.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="assets/restaurant-table-interior-main.jpg" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="assets/restaurant-table-interior-main.jpg" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <!-- content-table -->
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Naziv</th>
+                    <th scope="col">Adresa</th>
+                    <th scope="col">Tip</th>
+                    <th scope="col" colspan="2">Ocena</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr (click)="goToRestaurant(r)"
+                  role="button" aria-expanded="false" aria-controls="collapseExample"
+                  *ngFor="let r of displayedRestaurants">
+                    <td>{{r.name}}</td>
+                    <td>{{r.address}}</td>
+                    <td>{{r.type}}</td>
+                    <td>{{getRating(r.name)}}</td>
+                    <td>
+                        <span *ngFor="let s of getStars(getRating(r.name))">
+                            <span *ngIf="s == 0">
+                                <i class="bi bi-star-half"></i>
+                            </span>
+                            <span *ngIf="s == 1">
+                                <i class="bi bi-star-fill"></i>
+                            </span>
+                        </span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

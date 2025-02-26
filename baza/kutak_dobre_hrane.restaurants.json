@@ -1,0 +1,682 @@
+[{
+  "_id": {
+    "$oid": "667c7d7a6f62e4c0051f3b98"
+  },
+  "name": "Bela Reka",
+  "address": "Tosin Bunar 179",
+  "phone": "061/93-42-52",
+  "type": "domaca kuhinja",
+  "waiters": [
+    {
+      "username": "Gvozdeni",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "Aleksa",
+      "lastname": "Gvozdenovic",
+      "gender": "muski",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "picture": "",
+      "active": 0
+    },
+    {
+      "username": "Trajko",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "Aleksandar",
+      "lastname": "Trajkovic",
+      "gender": "muski",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "picture": "",
+      "active": 0
+    }
+  ],
+  "location": "44.814413079489476, 20.3928983693194",
+  "reservations": [
+    {
+      "dateAndTime": "2024-07-25/04:34",
+      "persons": "3",
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Bela Reka",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "requested",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "persons": 3,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Bela Reka",
+      "served": true,
+      "review": {
+        "text": "Komentar 3",
+        "rating": 3,
+        "author": "ColG"
+      },
+      "dateAndTime": "",
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "persons": 4,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Bela Reka",
+      "served": true,
+      "review": {
+        "text": "Komentar 4",
+        "rating": 4,
+        "author": "ColG"
+      },
+      "dateAndTime": "",
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "capacity": 3,
+      "type": "table",
+      "position": "200, 75",
+      "size": "40"
+    },
+    {
+      "id": 2,
+      "capacity": 4,
+      "type": "table",
+      "position": "200, 175",
+      "size": "40"
+    },
+    {
+      "id": 3,
+      "capacity": 3,
+      "type": "table",
+      "position": "80, 75",
+      "size": "40"
+    },
+    {
+      "id": 4,
+      "capacity": 2,
+      "type": "table",
+      "position": "80, 175",
+      "size": "40"
+    },
+    {
+      "id": 5,
+      "capacity": 3,
+      "type": "table",
+      "position": "400, 75",
+      "size": "40"
+    },
+    {
+      "id": 6,
+      "capacity": 4,
+      "type": "table",
+      "position": "400, 175",
+      "size": "40"
+    },
+    {
+      "id": 7,
+      "capacity": 2,
+      "type": "table",
+      "position": "400, 285",
+      "size": "40"
+    },
+    {
+      "id": 8,
+      "capacity": 3,
+      "type": "table",
+      "position": "520, 75",
+      "size": "40"
+    },
+    {
+      "id": 9,
+      "capacity": 5,
+      "type": "table",
+      "position": "520, 175",
+      "size": "40"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "kitchen",
+      "position": "20,250",
+      "size": "220,90"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "toilet",
+      "position": "500,250",
+      "size": "75,75"
+    }
+  ],
+  "workingHours": "09:00-23:00"
+},
+{
+  "_id": {
+    "$oid": "667c7d7a6f62e4c0051f3b99"
+  },
+  "name": "Masa",
+  "address": "Ustanicka 170",
+  "phone": "064/37-45-99",
+  "type": "domaca kuhinja",
+  "waiters": [
+    {
+      "username": "Setf",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "Stefan",
+      "lastname": "Lazarevic",
+      "gender": "muski",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "picture": "",
+      "active": 0
+    },
+    {
+      "username": "Hara",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "",
+      "lastname": "",
+      "gender": "",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "profilePicture": null,
+      "active": 0
+    }
+  ],
+  "location": "44.78487332447754, 20.501466758156425",
+  "reservations": [
+    {
+      "dateAndTime": "2024-07-17/08:28",
+      "persons": "2",
+      "extras": "uwu",
+      "name": "ColG",
+      "restaurant": "Masa",
+      "served": false,
+      "review": {
+        "text": "solidan",
+        "rating": 3,
+        "author": "ColG"
+      },
+      "status": "requested",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "persons": 2,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Masa",
+      "served": true,
+      "review": {
+        "text": "Komentar 2",
+        "rating": 2,
+        "author": "ColG"
+      },
+      "dateAndTime": "",
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-06-17/08:30",
+      "persons": "2",
+      "extras": ":<",
+      "name": "ColG",
+      "restaurant": "Masa",
+      "served": true,
+      "review": {
+        "text": "solidan",
+        "rating": 3,
+        "author": "ColG"
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-08/09:05",
+      "persons": 3,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Masa",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 2,
+      "waiter": "",
+      "time": 180,
+      "_id": {
+        "$oid": "668a219b72ee0bd6b8cb896e"
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "capacity": 3,
+      "type": "table",
+      "position": "70, 70",
+      "size": "40"
+    },
+    {
+      "id": 2,
+      "capacity": 4,
+      "type": "table",
+      "position": "70, 180",
+      "size": "40"
+    },
+    {
+      "id": 3,
+      "capacity": 3,
+      "type": "table",
+      "position": "220, 125",
+      "size": "40"
+    },
+    {
+      "id": 4,
+      "capacity": 2,
+      "type": "table",
+      "position": "220, 275",
+      "size": "40"
+    },
+    {
+      "id": 5,
+      "capacity": 3,
+      "type": "table",
+      "position": "410, 70",
+      "size": "40"
+    },
+    {
+      "id": 6,
+      "capacity": 6,
+      "type": "table",
+      "position": "350, 200",
+      "size": "40"
+    },
+    {
+      "id": 7,
+      "capacity": 2,
+      "type": "table",
+      "position": "500, 285",
+      "size": "40"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "kitchen",
+      "position": "510,40",
+      "size": "85,170"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "toilet",
+      "position": "40,250",
+      "size": "75,75"
+    }
+  ],
+  "workingHours": "09:00-23:00"
+},
+{
+  "_id": {
+    "$oid": "667c7d7a6f62e4c0051f3b9a"
+  },
+  "name": "Super VOK",
+  "address": "Bulevar kralja Aleksandra 174",
+  "phone": "065/56-25-22",
+  "type": "kineski",
+  "waiters": [
+    {
+      "username": "Coda",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "Danilo",
+      "lastname": "Avramovic",
+      "gender": "muski",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "picture": ""
+    },
+    {
+      "username": "Laki",
+      "password": "2002",
+      "question": "",
+      "answer": "",
+      "firstname": "Lazar",
+      "lastname": "Djordjevic",
+      "gender": "muski",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "card": "",
+      "type": "konobar",
+      "picture": ""
+    }
+  ],
+  "location": "44.8054832096315, 20.484867082768517",
+  "reservations": [
+    {
+      "persons": 5,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": true,
+      "review": {
+        "text": "ok",
+        "rating": 4,
+        "author": "ColG"
+      },
+      "dateAndTime": "2024-02-13/12:15",
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "persons": 1,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": true,
+      "review": {
+        "text": "Komentar 1",
+        "rating": 1,
+        "author": "ColG"
+      },
+      "dateAndTime": "2024-04-04/04:20",
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-03/04:45",
+      "persons": "4",
+      "extras": "olelole",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-02/15:45",
+      "persons": "4",
+      "extras": "hasanaginica",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "requested",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-05/19:15",
+      "persons": "3",
+      "extras": "lmao",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "denied",
+      "message": "nema slobodnog stola",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-02/15:30",
+      "persons": 4,
+      "extras": "greska",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 3,
+      "waiter": "Coda",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-05/02:30",
+      "persons": 1,
+      "extras": "test",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": true,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 1,
+      "waiter": "Coda",
+      "time": 180
+    },
+    {
+      "dateAndTime": "2024-07-10/15:15",
+      "persons": 3,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "accepted",
+      "message": "",
+      "tableId": 2,
+      "waiter": "Coda",
+      "time": 180,
+      "_id": {
+        "$oid": "668a324572ee0bd6b8cb8b8e"
+      }
+    },
+    {
+      "dateAndTime": "2024-07-15/10:29",
+      "persons": 0,
+      "extras": "",
+      "name": "ColG",
+      "restaurant": "Super VOK",
+      "served": false,
+      "review": {
+        "text": "",
+        "rating": 0,
+        "author": ""
+      },
+      "status": "requested",
+      "message": "",
+      "tableId": 0,
+      "waiter": "",
+      "time": 180,
+      "_id": {
+        "$oid": "668a35ce72ee0bd6b8cb8c21"
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "capacity": 2,
+      "type": "table",
+      "position": "200, 275",
+      "size": "40"
+    },
+    {
+      "id": 2,
+      "capacity": 3,
+      "type": "table",
+      "position": "200, 75",
+      "size": "40"
+    },
+    {
+      "id": 3,
+      "capacity": 4,
+      "type": "table",
+      "position": "350, 175",
+      "size": "40"
+    },
+    {
+      "id": 4,
+      "capacity": 3,
+      "type": "table",
+      "position": "500, 275",
+      "size": "40"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "kitchen",
+      "position": "0,0",
+      "size": "100,350"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "toilet",
+      "position": "500,20",
+      "size": "75,75"
+    }
+  ],
+  "workingHours": "09:00-21:00"
+},
+{
+  "_id": {
+    "$oid": "6689a45665fb313cb823f102"
+  },
+  "name": "Republika PUB",
+  "address": "Ustanicka",
+  "phone": "",
+  "type": "pub",
+  "waiters": [],
+  "location": "",
+  "reservations": [],
+  "tables": [
+    {
+      "id": 1,
+      "capacity": 2,
+      "type": "table",
+      "position": "200, 275",
+      "size": "40"
+    },
+    {
+      "id": 2,
+      "capacity": 3,
+      "type": "table",
+      "position": "200, 75",
+      "size": "40"
+    },
+    {
+      "id": 3,
+      "capacity": 4,
+      "type": "table",
+      "position": "350, 175",
+      "size": "40"
+    },
+    {
+      "id": 4,
+      "capacity": 3,
+      "type": "table",
+      "position": "500, 275",
+      "size": "40"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "kitchen",
+      "position": "0,0",
+      "size": "100,350"
+    },
+    {
+      "id": 0,
+      "capacity": 0,
+      "type": "toilet",
+      "position": "500,20",
+      "size": "75,75"
+    }
+  ],
+  "__v": 0,
+  "workingHours": "09:00-23:30"
+}]

@@ -1,0 +1,30 @@
+<app-waiter-navbar></app-waiter-navbar>
+
+
+<section id="pricing" class="bg-light">
+    <div class="conntainer-lg">
+        <div class="row">
+            <div class="col-4">
+                <span>
+                    <canvas baseChart
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [legend]="barChartLegend"
+                    [type]="'bar'">
+                </canvas>
+                </span>
+            </div>
+            <div class="col-4">
+                <canvas baseChart
+                    [type]="'pie'"
+                    [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,137 @@
+<app-waiter-navbar></app-waiter-navbar>
+
+<!-- reservation-requests -->
+<section>
+    <div class="row justify-content-center align-items-center">
+        <!-- content-table -->
+         <div class="text-start mb-3">
+            <h3 class="fs-2">Zahtevi za rezervisanje</h3>
+            <hr>
+         </div>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Datum rezervacije</th>
+                <th scope="col">Ime i prezime</th>
+                <th scope="col">Broj osoba</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of getPendingReservations()">
+                <td>{{r.dateAndTime}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.persons}}</td>
+                <td>
+                    <button class="btn btn-dark btn-outline-light me-3"
+                    data-bs-toggle="modal" data-bs-target="#acc-modal" (click)="selectReservation(r)">
+                        Privhati
+                    </button>
+                    <button class="btn btn-dark btn-outline-light" 
+                    data-bs-toggle="modal" data-bs-target="#dny-modal" (click)="selectReservation(r)">
+                        Odbij
+                    </button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- modal-accept -->
+<div class="modal fade" id="acc-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Izaberi sto i potvrdi rezervaciju</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class=" d-flex justify-content-center mt-1">
+                        <div class=" text-center mb-5 align-items-center">
+                            <div class="col-lg-12 d-flex justify-content-end">
+                                <canvas id="myCanvas" width="600" height="350" style="border:2px solid black;">
+                                    Sorry, your browser does not support canvas.
+                                </canvas>
+                            </div>
+                            <label class="form-label mt-3 me-5">Izaberi sto:</label>
+                            <select #selectInput>
+                                <option *ngFor="let t of availableTables()"  value="{{t.id+'-'+t.capacity}}">
+                                    Table ID: {{t.id}} ( {{t.capacity}} )
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" (click)="accept(selectInput.value)">Potvrdi</button>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <!-- modal-deny -->
+
+<div class="modal fade" id="dny-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Unesi komentar odbijene rezervacije</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label class="form-label">Unesi komentar:</label>
+                <input type="text" class="form-control" [(ngModel)] = "denyMessage">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" (click)="deny()">Odbij rezervaciju</button>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+ <!-- duties -->
+
+ <section class="bg-light">
+    <div class="row justify-content-center align-items-center">
+        <!-- content-table -->
+         <div class="text-start mb-3">
+            <h3 class="fs-2">Moja zaduzenja</h3>
+            <hr>
+         </div>
+        <table class="table bg-light">
+            <thead>
+              <tr>
+                <th scope="col">Datum rezervacije</th>
+                <th scope="col">Ime i prezime</th>
+                <th scope="col">Broj osoba</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of myDuties">
+                <td>{{r.dateAndTime}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.persons}}</td>
+                <td>
+                    <span *ngIf="r.dateAndTime >= checkReservationDate()">
+                        <button class="btn btn-dark btn-outline-light" (click)="confirmGuests(r)"> Potvrdi dolazak</button>
+                    </span>
+                    <span *ngIf="r.dateAndTime < checkReservationDate() && r.served == false">
+                        <button class="btn btn-dark btn-outline-light" (click)="freeTable(r)"> Osobodi sto</button>
+                    </span>
+                    <span *ngIf="r.dateAndTime < checkReservationDate() && r.served == true && r.time < 240">
+                        <button class="btn btn-dark btn-outline-light" (click)="extendReservation(r)"> Produzi boravak</button>
+                    </span>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

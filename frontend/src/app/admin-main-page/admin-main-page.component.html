@@ -1,0 +1,395 @@
+
+<!-- users-lists -->
+<section id="pricing" class="bg-light">
+    <div class="conntainer-lg">
+        <div class="row align-items-center justify-content-center g-3">
+            <div class="text-center fs-1"> Pregled svih korisnika sistema </div>
+            <hr>
+
+            <div class="col-8 col-lg-4">
+                <span class="fs-2">Lista gostiju</span>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let g of allGuests">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                {{g.username}} 
+                            </div>
+                            <div class="col-auto">
+                                <a data-bs-toggle="modal" data-bs-target="#reg-modal"
+                                class="link-dark me-3" (click)="selectUser(g)">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a class="link-dark" (click)="deactivateUser(g)">
+                                    <span class="text-muted">Deactivate</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>    
+                </ul>
+            </div>
+
+            <div class="col-8 col-lg-4">
+                <span class="fs-2">Lista konobara</span>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let w of allWaiters">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                {{w.username}} 
+                            </div>
+                            <div class="col-auto">
+                                <a  data-bs-toggle="modal" data-bs-target="#reg-modal"
+                                class="link-dark me-3" (click)="selectUser(w)">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a  class="link-dark" (click)="deactivateUser(w)">
+                                    <span class="text-muted">Deactivate</span>
+                                </a>
+                            </div>
+                        </div> 
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-8 col-lg-4 ">
+                <span class="fs-2">Lista restorana</span>
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let r of allRestaurants">
+                      <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            {{r.name}}
+                        </div>
+                        <div class="col-auto">
+                          <a href="" data-bs-toggle="modal" data-bs-target="#set-modal" 
+                          class="link-dark me-3" (click)="selectRestaurant(r)">
+                            <i class="bi bi-clock"></i>
+                          </a>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- edit-modal -->
+<div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Izmenite profil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newUsername" class="form-control form-control-lg"
+                    placeholder="Novo korisniko ime"  [(ngModel)] = "newUser.username" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="password" id="newPassword" class="form-control form-control-lg" 
+                    placeholder="Nova lozinka" [(ngModel)] = "newUser.password" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newQuestion" class="form-control form-control-lg" 
+                    placeholder="Novo bezbednosno pitanje" [(ngModel)] = "newUser.question" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newAnswer" class="form-control form-control-lg" 
+                    placeholder="Novi odgovor" [(ngModel)] = "newUser.answer" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newFirstname" class="form-control form-control-lg" 
+                    placeholder="Novo ime" [(ngModel)] = "newUser.firstname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newLastname" class="form-control form-control-lg" 
+                    placeholder="Novo prezime" [(ngModel)] = "newUser.lastname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <label class="form-label text-black ps-2 me-3" for="newGender">Pol: </label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="muski" [(ngModel)] = "newUser.gender" >
+                      <label class="form-check-label" for="inlineRadio1">Muski</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="zenski" [(ngModel)] = "newUser.gender">
+                      <label class="form-check-label" for="inlineRadio2">Zenski</label>
+                    </div>
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newAddress" class="form-control form-control-lg"
+                    placeholder="Nova adresa" [(ngModel)] = "newUser.address" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newPhone" class="form-control form-control-lg"
+                    placeholder="Nov kontakt telefon" [(ngModel)] = "newUser.phone" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newEmail" class="form-control form-control-lg"
+                    placeholder="Nova email adresa" [(ngModel)] = "newUser.email" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="newCard" class="form-control form-control-lg"
+                    placeholder="Nov broj kartice" [(ngModel)] = "newUser.card" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <div class="mb-3">
+                      <input class="form-control" type="file" id="formFile" (change)="uploadPicture($event)">
+                      <label for="formFile" class=" text-white-50">Default file input example</label>
+                    </div>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" data-bs-dismiss="modal"
+                (click)="editProfile()">Potvrdite</button>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <!-- pending-requests -->
+
+ <section id="pricing">
+    <div class="conntainer-lg">
+        <div class="row align-items-center justify-content-center g-3">
+            <div class="text-center fs-1 mb-3"> Pregled svih zahteva za registraciju <hr> </div>
+            <div class="col-8">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let r of allRequests">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <span class="fs-5 me-2">{{r.username}}</span>
+                                (<span class="text-muted">{{r.email}}</span>) 
+                            </div>
+                            <div class="col-auto">
+                                <span>
+                                    <button class="btn btn-dark btn-outline-light me-2" (click)="acceptRequest(r)">
+                                        Prihvati
+                                    </button>
+                                </span>
+                                <span>
+                                    <button class="btn btn-dark btn-outline-light" (click)="denyRequest(r)">
+                                        Odbij
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </li>    
+                </ul>
+            </div>
+        </div>
+    </div>       
+ </section> 
+ 
+ <!-- add-waiter -->
+
+ <section id="pricing" class="bg-light">
+    <div class="conntainer-lg">
+        <div class="row align-items-center justify-content-center g-3">
+            <div class="text-center fs-1 mb-3"> Dodavanje konobara i restorana <hr> </div>
+            <div class="col-6 d-flex justify-content-center">
+                <button class="btn btn-dark btn-outline-light fs-5"
+                data-bs-toggle="modal" data-bs-target="#add-modal">
+                    Dodaj konobara
+                </button>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <button class="btn btn-dark btn-outline-light fs-5"
+                data-bs-toggle="modal" data-bs-target="#res-modal">
+                    Dodaj restoran
+                </button>
+            </div>
+        </div>
+    </div>       
+ </section> 
+
+ <!-- add-modal -->
+ <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 500px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-modal-title">Dodavanje konobara</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" 
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newUsername" class="form-control form-control-lg"
+                    placeholder="Novo korisniko ime"  [(ngModel)] = "newUser.username" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="password" id="add-newPassword" class="form-control form-control-lg" 
+                    placeholder="Nova lozinka" [(ngModel)] = "newUser.password" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newQuestion" class="form-control form-control-lg" 
+                    placeholder="Novo bezbednosno pitanje" [(ngModel)] = "newUser.question" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newAnswer" class="form-control form-control-lg" 
+                    placeholder="Novi odgovor" [(ngModel)] = "newUser.answer" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newFirstname" class="form-control form-control-lg" 
+                    placeholder="Novo ime" [(ngModel)] = "newUser.firstname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newLastname" class="form-control form-control-lg" 
+                    placeholder="Novo prezime" [(ngModel)] = "newUser.lastname" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <label class="form-label text-black ps-2 me-3" for="newGender">Pol: </label>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="muski" [(ngModel)] = "newUser.gender" >
+                      <label class="form-check-label" for="inlineRadio1">Muski</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="zenski" [(ngModel)] = "newUser.gender">
+                      <label class="form-check-label" for="inlineRadio2">Zenski</label>
+                    </div>
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newAddress" class="form-control form-control-lg"
+                    placeholder="Nova adresa" [(ngModel)] = "newUser.address" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newPhone" class="form-control form-control-lg"
+                    placeholder="Nov kontakt telefon" [(ngModel)] = "newUser.phone" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newEmail" class="form-control form-control-lg"
+                    placeholder="Nova email adresa" [(ngModel)] = "newUser.email" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <input type="text" id="add-newCard" class="form-control form-control-lg"
+                    placeholder="Nov broj kartice" [(ngModel)] = "newUser.card" />
+                  </div>
+    
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <div class="mb-3">
+                      <input class="form-control" type="file" id="formFile" (change)="uploadPicture($event)">
+                      <label for="formFile" class=" text-white-50">Default file input example</label>
+                    </div>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline form-white mb-4">
+                    <label class="form-label text-black ps-2 me-3" for="newGender">Odaberi restoran: </label>
+                    <select [(ngModel)] = "waitersRestaurant">
+                        <option value="{{r.name}}" *ngFor="let r of allRestaurants">
+                            {{r.name}}
+                        </option>
+                    </select>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark btn-outline-light" data-bs-dismiss="modal"
+                (click)="addWaiter()">Potvrdite</button>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+ <!-- res-modal -->
+
+ <div class="modal fade" id="res-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" style="width: 500px;">
+          <div class="modal-header">
+              <h5 class="modal-title" id="add-modal-title">Dodavanje restorana</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" 
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text"  class="form-control form-control-lg" [(ngModel)]="newRestaurant.name"/>
+                  <label class="form-label text-black-50">Naziv restorana</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text"  class="form-control form-control-lg" [(ngModel)]="newRestaurant.type"/>
+                  <label class="form-label text-black-50">Tip restorana</label>
+                </div>
+                
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text"  class="form-control form-control-lg"  [(ngModel)]="newRestaurant.address"/>
+                  <label class="form-label text-black-50">Adresa restorana</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text"  class="form-control form-control-lg"  [(ngModel)]="newRestaurant.descritpion"/>
+                  <label class="form-label text-black-50">Kratak opis</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <input type="text"  class="form-control form-control-lg"  [(ngModel)]="newRestaurant.phone"/>
+                  <label class="form-label text-black-50">Kontakt</label>
+                </div>
+  
+                <div data-mdb-input-init class="form-outline form-white mb-4">
+                  <div class="mb-3">
+                    <input class="form-control" type="file" id="formFile" (change)="getTableLayout($event)">
+                    <label for="formFile" class=" text-white-50">Default file input example</label>
+                  </div>
+                </div>
+
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-dark btn-outline-light" data-bs-dismiss="modal"
+              (click)="addRestaurant()">Potvrdite</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- set-modal -->
+<div class="modal fade" id="set-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" style="width: 500px;">
+          <div class="modal-header">
+              <h5 class="modal-title" id="add-modal-title">Postavi radno vreme</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" 
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Opening time:
+            <input type="time" [(ngModel)]="opening">
+            <br>
+            Closing time:
+            <input type="time" [(ngModel)]="closing">
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-dark btn-outline-light" data-bs-dismiss="modal"
+              (click)="setWorkingHours()">Potvrdite</button>
+          </div>
+      </div>
+  </div>
+</div>
